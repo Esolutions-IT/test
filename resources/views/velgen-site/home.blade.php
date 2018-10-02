@@ -136,7 +136,7 @@
 				width:70%;
 				height:450px;
 				margin-left:50px;
-				display: none;
+				display: block;
 				color:#fff!important;
 				padding:2em;
 				border-bottom: 1px solid black;
@@ -153,6 +153,26 @@
 			}
 			button:hover{
 				opacity:0.5;
+			}
+
+			#NP_ID{
+				display:none;
+			}
+			#BMW_SERIE_ID{
+				display:none;
+				margin-top:-35px;
+			}
+			#BMW_SERIE1_ID{
+				display:none;
+				margin-top:-70px;
+			}
+			#BMW_SERIE2_ID{
+				display:none;
+				margin-top:-102px;
+			}
+			#BMW_SERIE3_ID{
+				display:none;
+				margin-top:-134px;
 			}
 		</style>
     </head>
@@ -306,38 +326,234 @@
 				<!-- /responsive-nav -->
 			<div class="menu-sub" id="menu_sub" onmouseover="functionMega()" onmouseout="functionMegaout()">
 				<h3 style="font-size:12px; color:#b5b5b5">Bekijk het assortiment</h3>
-				<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">Nieuwste Producten<i class="fa fa-angle-right" style="margin-left:102px;"></i></button><br />
-				<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW serie<i class="fa fa-angle-right" style="margin-left:170px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 1 serie<i class="fa fa-angle-right" style="margin-left:123px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 2 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 3 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 4 serie<i class="fa fa-angle-right" style="margin-left:119.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 5 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 6 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 7 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
-				<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW X<i class="fa fa-angle-right" style="margin-left:193px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X1<i class="fa fa-angle-right" style="margin-left:146px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X3<i class="fa fa-angle-right" style="margin-left:143.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X4<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X5<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X6<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
-				<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW Z<i class="fa fa-angle-right" style="margin-left:191.5px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW Z3<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
-					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW Z4<i class="fa fa-angle-right" style="margin-left:141px; font-size:14px;"></i></button><br />
-				<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW i3 / i8 / Z8<i class="fa fa-angle-right" style="margin-left:133px;"></i></button><br />
-				<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">Mini<i class="fa fa-angle-right" style="margin-left:212px;"></i></button>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="text-decoration: none; color:black;" onclick="functionNP()">Nieuwste Producten<i class="fa fa-angle-right" style="margin-left:102px;"></i></button><br />
+				</div>
+				<div class="col-md-9" id="NP_ID" onmouseover="functionMega()" onmouseout="functionMegaout()">
+					<img class="img-responsive" src="{{asset('public/images/placeholder1.png')}}" style="position:absolute; width:700px; height:150px; margin-left:50px;">
+					<h1 style="position:absolute;font-size:20px; margin-left:50px; margin-top:180px;">Nieuwste producten</h1>
+					<a href="#"><h1 style="position:absolute; font-size:12px; margin-left:50px; margin-top:210px;">Ga erheen »</h1></a>
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:50px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:320px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:580px; margin-top:240px;">
+				</div>
 
-			</div>
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="text-decoration: none; color:black;" onclick="functionBMWS()">BMW serie<i class="fa fa-angle-right" style="margin-left:170px;"></i></button><br />
+				</div>
+				<div class="col-md-9" id="BMW_SERIE_ID" onmouseover="functionMega()" onmouseout="functionMegaout()">
+					<img class="img-responsive" src="{{asset('public/images/placeholder1.png')}}" style="position:absolute; width:700px; height:150px; margin-left:50px;">
+					<h1 style="position:absolute;font-size:20px; margin-left:50px; margin-top:180px;">BMW serie</h1>
+					<a href="#"><h1 style="position:absolute; font-size:12px; margin-left:50px; margin-top:210px;">Ga erheen »</h1></a>
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:50px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:320px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:580px; margin-top:240px;">
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;" onclick="functionBMWS1()">BMW 1 serie<i class="fa fa-angle-right" style="margin-left:123px; font-size:14px;"></i></button><br />
+				</div>
+				<div class="col-md-9" id="BMW_SERIE1_ID" onmouseover="functionMega()" onmouseout="functionMegaout()">
+					<img class="img-responsive" src="{{asset('public/images/placeholder1.png')}}" style="position:absolute; width:700px; height:150px; margin-left:50px;">
+					<h1 style="position:absolute;font-size:20px; margin-left:50px; margin-top:180px;">BMW 1 serie</h1>
+					<a href="#"><h1 style="position:absolute; font-size:12px; margin-left:50px; margin-top:210px;">Ga erheen »</h1></a>
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:50px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:320px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:580px; margin-top:240px;">
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;" onclick="functionBMWS2()">BMW 2 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
+				</div>
+				<div class="col-md-9" id="BMW_SERIE2_ID" onmouseover="functionMega()" onmouseout="functionMegaout()">
+					<img class="img-responsive" src="{{asset('public/images/placeholder1.png')}}" style="position:absolute; width:700px; height:150px; margin-left:50px;">
+					<h1 style="position:absolute;font-size:20px; margin-left:50px; margin-top:180px;">BMW 2 serie</h1>
+					<a href="#"><h1 style="position:absolute; font-size:12px; margin-left:50px; margin-top:210px;">Ga erheen »</h1></a>
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:50px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:320px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:580px; margin-top:240px;">
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;" onclick="functionBMWS3()">BMW 3 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
+				</div>
+				<div class="col-md-9" id="BMW_SERIE3_ID" onmouseover="functionMega()" onmouseout="functionMegaout()">
+					<img class="img-responsive" src="{{asset('public/images/placeholder1.png')}}" style="position:absolute; width:700px; height:150px; margin-left:50px;">
+					<h1 style="position:absolute;font-size:20px; margin-left:50px; margin-top:180px;">BMW 3 serie</h1>
+					<a href="#"><h1 style="position:absolute; font-size:12px; margin-left:50px; margin-top:210px;">Ga erheen »</h1></a>
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:50px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:320px; margin-top:240px;">
+					<img class="img-responsive" src="{{asset('public/images/placeholder_round.png')}}" style="position:absolute; width:150px; margin-left:580px; margin-top:240px;">
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 4 serie<i class="fa fa-angle-right" style="margin-left:119.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 5 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 6 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW 7 serie<i class="fa fa-angle-right" style="margin-left:120.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW X<i class="fa fa-angle-right" style="margin-left:193px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X1<i class="fa fa-angle-right" style="margin-left:146px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X3<i class="fa fa-angle-right" style="margin-left:143.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X4<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X5<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW X6<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW Z<i class="fa fa-angle-right" style="margin-left:191.5px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW Z3<i class="fa fa-angle-right" style="margin-left:142.5px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="font-size:12px;text-decoration: none; color:black; margin-left:50px;">BMW Z4<i class="fa fa-angle-right" style="margin-left:141px; font-size:14px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">BMW i3 / i8 / Z8<i class="fa fa-angle-right" style="margin-left:133px;"></i></button><br />
+				</div>
+
+				<div class="col-md-12">
+				</div>
+
+				<div class="col-md-3">
+					<button type="button" class="btn btn-link" style="text-decoration: none; color:black;">Mini<i class="fa fa-angle-right" style="margin-left:212px;"></i></button>
+				</div>
+
+
+				</div>
 
 			<script>
-				function functionMega() {
-					document.getElementById("menu_sub").style.display = "block";
-                    document.getElementById("content-page").style.opacity = "0.5";
-                }
-                function functionMegaout() {
-                    document.getElementById("menu_sub").style.display = "none";
-                    document.getElementById("content-page").style.opacity = "1";
-                }
+//				function functionMega() {
+//					document.getElementById("menu_sub").style.display = "block";
+//                    document.getElementById("content-page").style.opacity = "0.5";
+//                }
+//                function functionMegaout() {
+//                    document.getElementById("menu_sub").style.display = "none";
+//                    document.getElementById("content-page").style.opacity = "1";
+//                }
+
+				function functionNP(){
+                    document.getElementById("NP_ID").style.display = "block";
+                    document.getElementById("BMW_SERIE_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE1_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE2_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE3_ID").style.display = "none";
+				}
+
+				function functionBMWS(){
+					document.getElementById("BMW_SERIE_ID").style.display = "block";
+                    document.getElementById("NP_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE1_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE2_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE3_ID").style.display = "none";
+				}
+
+				function functionBMWS1(){
+                    document.getElementById("BMW_SERIE1_ID").style.display = "block";
+					document.getElementById("BMW_SERIE_ID").style.display = "none";
+					document.getElementById("NP_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE2_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE3_ID").style.display = "none";
+				}
+				function functionBMWS2(){
+                    document.getElementById("BMW_SERIE2_ID").style.display = "block";
+					document.getElementById("BMW_SERIE1_ID").style.display = "none";
+					document.getElementById("BMW_SERIE_ID").style.display = "none";
+					document.getElementById("NP_ID").style.display = "none";
+                    document.getElementById("BMW_SERIE3_ID").style.display = "none";
+				}
+				function functionBMWS3(){
+                    document.getElementById("BMW_SERIE3_ID").style.display = "block";
+					document.getElementById("BMW_SERIE2_ID").style.display = "none";
+					document.getElementById("BMW_SERIE1_ID").style.display = "none";
+					document.getElementById("BMW_SERIE_ID").style.display = "none";
+					document.getElementById("NP_ID").style.display = "none";
+				}
+
 			</script>
 			<!-- /container -->
 		</nav>

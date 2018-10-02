@@ -1941,7 +1941,7 @@
                 border: 0px solid rgba(0, 0, 0, 0);
             }
         }
-
+        @font-face { font-family: BebasNeue; src: url('{{asset('public/css/BebasNeue-Regular.otf')}}'); }
 
     </style>
 
